@@ -50,27 +50,27 @@ void bfs()
 	int visited[n];
 	for(i=1;i<=n;i++)
 		visited[i]=0;
-	queue[++rear]=x;
-	++front;
+	queue[++front]=x;
+	++rear;
 	visited[x]=1;
 	printf("\nBFS Traversal: ");
 	printf("START -> ");
-	i=queue[front];
-	while(rear<=front)
+	i=queue[rear];
+	while(front<=rear)
 	{
 	
 		for(j=1;j<=n;j++)
 		{		
 	        if(a[i][j]==1 && visited[j]!=1)
     	      {
-				  queue[++front]=j;
+				  queue[++rear]=j;
 				  visited[j]=1;
 				 
 			  }
 		  }	 
-		     printf("%d -> ",queue[rear]);
-			 ++rear;    
-			i=queue[rear];
+		     printf("%d -> ",queue[front]);
+			 ++front;    
+			i=queue[front];
 	}
 	printf(" END\n");
 }
